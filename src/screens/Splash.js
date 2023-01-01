@@ -1,9 +1,15 @@
 import React, {useEffect} from 'react';
 import {View, StyleSheet, StatusBar, ImageBackground} from 'react-native';
 
+import {useDispatch} from 'react-redux';
+import {getAsset} from '../redux/actions';
+
 const Splash = ({navigation}) => {
+  const dispatch = useDispatch();
+
   useEffect(() => {
     setTimeout(() => {
+      dispatch(getAsset());
       navigation.replace('Home');
     }, 2000);
   }, []);
