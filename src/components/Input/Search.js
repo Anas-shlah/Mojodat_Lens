@@ -5,7 +5,7 @@ import Icon from 'react-native-vector-icons/MaterialIcons';
 import {scale} from 'react-native-size-matters';
 
 const Search = props => {
-  const {setFilter, filter, setModalMV, navigation} = props;
+  const {setFilter, filter, setModalMV, datafilter, navigation} = props;
 
   const pressX = () => {
     setFilter('');
@@ -16,7 +16,7 @@ const Search = props => {
       <Icon
         name="add-circle-outline"
         size={scale(30)}
-        color="#000000"
+        color={datafilter == 0 ? 'green' : '#000000'}
         onPress={() => {
           setModalMV({Visible: true});
         }}
@@ -43,7 +43,7 @@ const Search = props => {
         <Icon
           name="highlight-off"
           size={scale(30)}
-          color="#000000"
+          color="red"
           onPress={pressX}
         />
       )}

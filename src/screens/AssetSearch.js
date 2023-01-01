@@ -75,6 +75,7 @@ const AssetSearch = ({route, navigation}) => {
           setFilter={setFilter}
           filter={filter}
           setModalMV={setModalMV}
+          datafilter={datafilter.length}
           navigation={navigation}
         />
       </View>
